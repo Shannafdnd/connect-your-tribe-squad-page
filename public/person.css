@@ -1,0 +1,8 @@
+.grid-item {
+    width: 200px;
+    height: min-content;
+
+    img {
+        max-width: 100%;
+    }
+}
