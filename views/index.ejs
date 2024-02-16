@@ -1,13 +1,12 @@
 <%- include('./partials/head') %>
 
-<h2>Students</h2>
-<ul>
-  <% persons.forEach(person => { %>
-    <li><a href="./person/<%= person.id %>"><%= person.name %></a>, 
-      squad_id <%= person.squad_id %>
-      <img src="<%= person.avatar %>" alt="avatar">
-    </li>
-  <% }) %>
-</ul>
+<h1>Choose your squad</h1>
+
+<section class="squad-buttons">
+  <a href="/squad/3">Squad 3</a>
+  <a href="/squad/4">Squad 4</a>
+  <a href="/squad/5">Squad 5</a>
+</section>
+
 
 <%- include('./partials/foot') %>

@@ -2,8 +2,13 @@
 
 <a href="/">Back</a>
 
-<h2><%= person.name %></h2>
-
-<p>Squad: <%= person.squad_id %>
+<ul>
+    <% persons.forEach(person => { %>
+      <li><a href="./person/<%= person.id %>"><%= person.name %></a>, 
+        squad_id <%= person.squad_id %>
+        <img src="<%= person.avatar %>" alt="avatar">
+      </li>
+    <% }) %>
+  </ul>
 
 <%- include('./partials/foot') %>

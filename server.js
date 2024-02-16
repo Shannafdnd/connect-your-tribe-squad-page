@@ -32,7 +32,7 @@ app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
 
   // Stap 2
-  fetchJson(apiUrl + '/person').then((apiData) => {
+  fetchJson('https://fdnd.directus.app/items/person').then((apiData) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
@@ -54,6 +54,14 @@ app.get('/person/:id', function (request, response) {
   fetchJson(apiUrl + '/persons/' + request.params.id).then((persons) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
     response.render('person', {person: persons.data, squads: squadData.data})
+  })
+})
+
+app.get('/squad/:squad_id', function (request, response) {
+  // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
+  fetchJson(apiUrl + '/person/?filter={%22squad_id%22:' + request.params.squad_id + "}").then((persons) => {
+    // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
+    response.render('person', {persons: persons.data, squads: squadData.data})
   })
 })
 
