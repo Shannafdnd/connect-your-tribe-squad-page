@@ -1,17 +1,33 @@
+
 body {
     background-color: #e1f6ff;
+    width: 90%;
+    height: 90%;
+    border-radius: 20rem;
 }
+
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* .text-box {
+    background-image: url(/public/assets/Pokemon_Text_Box_-_Pokmon__Png_Download_-_1177x553___4669714__PNG_Image-removebg-preview.png);
+    background-size: contain;
+} */
 
 .squad-buttons {
     display: flex;
     justify-content: center;
+
     a {
         text-decoration: none;
         color: black;
-        background-image: url("/assets/—Pngtree—gold border frame_7598043.png");
+        background-image: url("/assets/pokeball.png");
         background-size: contain;
-        width: 20rem;
-        aspect-ratio: 1 / 1;
+        background-repeat: no-repeat;
+        width: 10rem;
         display: flex;
         align-items: center;
         justify-content: center;
