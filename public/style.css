@@ -6,14 +6,15 @@
 --screen-color: aliceblue;
     /* Secondary colors */
 --darker-purple: purple;
-    /* Radius */
+    /* Borders */
 --big-radius: 2rem;
 --small-radius: 10px;
+--border-width: 15px;
 }
 
 main {
     background-color: var(--ds-color);
-    width: 90vw;
+    width: 70vw;
     height: 90vh;
     border-radius: var(--big-radius);
     border: 1px solid black;
@@ -22,13 +23,13 @@ main {
 
 .top-screen {
     background-color: var(--screen-color);
-    border: 5px solid var(--darker-purple);
+    border: var(--border-width) solid var(--darker-purple);
     border-radius: var(--small-radius);
-    margin-top: 2rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-top: 3rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
     padding: 2%;
-    height: 40%;
+    height: 35%;
 
     .text-box {
         background-image: url("/assets/Pokemon_Text_Box_-_Pokmon__Png_Download_-_1177x553___4669714__PNG_Image-removebg-preview.png");
@@ -50,9 +51,9 @@ main {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
     width: 100%;
-    height: 40%;
+    height: 35%;
 
     .decorative-button {
         max-width: 8rem;
@@ -61,9 +62,9 @@ main {
 
 .bottom-screen {
     background-color: var(--screen-color);
-    border: 5px solid var(--darker-purple);
+    border: var(--border-width) solid var(--darker-purple);
     border-radius:var(--small-radius);
-    width: 70%;
+    width: 60%;
     height: 100%;
 }
 
@@ -92,6 +93,6 @@ h1 {
     }
 
     a:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }

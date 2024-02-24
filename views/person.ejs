@@ -1,16 +1,29 @@
 <%- include('./partials/head') %>
 
-<a href="/">Back</a>
+<main>
+  
+  <a href="/">Back</a>
+  
+  <section class="top-screen">
+    <div class="text-box">
+      <h1>Choose your starter squad</h1>
+    </div>
+  </section>
 
-<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
-    <% persons.forEach(person => { %>
-      <div class="grid-item"><a href="./person/<%= person.id %>"><%= person.name %></a>, 
-        squad_id <%= person.squad_id %>
-        <img src="<%= person.avatar %>" alt="avatar">
-      </div>
-    <% }) %>
-</div>
-<ul>
-  </ul>
+  <div class="bottom-row">
+    <img src="/assets/decorative_buttons_left.png" alt="decorative buttons" class="decorative-button">
+    <section class="bottom-screen">
+      <% persons.forEach(person => { %>
+        <div class="grid-item"><a href="./person/<%= person.id %>"><%= person.name %></a>, 
+          squad_id <%= person.squad_id %>
+          <img src="<%= person.avatar %>" alt="avatar">
+        </div>
+      <% }) %>
+    </section>
+    <img src="/assets/decorative_buttons_right.png" alt="decorative buttons" class="decorative-button">
+  <div>
+  
+</main>
+
 
 <%- include('./partials/foot') %>
