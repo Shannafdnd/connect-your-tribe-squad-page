@@ -1,9 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
-body {
-    background-color: #e1f6ff;
-    width: 90%;
-    height: 90%;
-    border-radius: 20rem;
+:root {
+    /* Main colors */
+--ds-color: pink;
+--screen-color: aliceblue;
+    /* Secondary colors */
+--darker-purple: purple;
+    /* Radius */
+--big-radius: 2rem;
+--small-radius: 10px;
+}
+
+main {
+    background-color: var(--ds-color);
+    width: 90vw;
+    height: 90vh;
+    border-radius: var(--big-radius);
+    border: 1px solid black;
+    margin: 5vh 5vw;
+}
+
+.top-screen {
+    background-color: var(--screen-color);
+    border: 5px solid var(--darker-purple);
+    border-radius: var(--small-radius);
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding: 2%;
+    height: 40%;
+
+    .text-box {
+        background-image: url("/assets/Pokemon_Text_Box_-_Pokmon__Png_Download_-_1177x553___4669714__PNG_Image-removebg-preview.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: white;
+        width: 20rem;
+        padding: 2% 2%;
+        aspect-ratio: 729/342;
+
+        h1 {
+            margin: 0;
+        }
+    }
+}
+
+.bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    height: 40%;
+
+    .decorative-button {
+        max-width: 8rem;
+    }
+}
+
+.bottom-screen {
+    background-color: var(--screen-color);
+    border: 5px solid var(--darker-purple);
+    border-radius:var(--small-radius);
+    width: 70%;
+    height: 100%;
 }
 
 h1 {
@@ -11,11 +72,6 @@ h1 {
     font-optical-sizing: auto;
     font-style: normal;
 }
-
-/* .text-box {
-    background-image: url(/public/assets/Pokemon_Text_Box_-_Pokmon__Png_Download_-_1177x553___4669714__PNG_Image-removebg-preview.png);
-    background-size: contain;
-} */
 
 .squad-buttons {
     display: flex;
@@ -27,9 +83,15 @@ h1 {
         background-image: url("/assets/pokeball.png");
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: 0 1.5rem;
         width: 10rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
+        text-align: center;
+        height: 10rem;
+        transition: transform 400ms cubic-bezier(.47,1.64,.41,.8);
+    }
+
+    a:hover {
+        transform: scale(1.2);
     }
 }
