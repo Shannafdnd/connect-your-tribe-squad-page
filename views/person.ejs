@@ -2,23 +2,41 @@
 
 <main>
   
-  <a href="/">Back</a>
-  
   <section class="top-screen">
+    <header><a href="/">Back</a></header>
     <div class="text-box">
-      <h1>Choose your starter squad</h1>
+      <h1>You chose squad <%= persons[0].squad_id %>! Now you can meet the team.</h1>
+    </div>
+    <div class="card-container">
+      <%
+        // This is the regex for a valid url
+        const validUrlRegex = new RegExp(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi);
+        persons.forEach(person => {
+          // If the avatar is not a valid url, replace it with a pokémon with their squad id with a website from [this](https://github.com/PokeAPI/pokeapi/issues/346) forum post
+          const avatar = person.avatar.match(validUrlRegex) ? person.avatar : `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/versions/generation-v/black-white/animated/${person.id}.gif`;
+          %>
+          <div class="card" id="card.<%= person.id %>" hidden>
+            <div class="image-name-website">
+              <div class="image-container"><img src="<%= avatar %>" alt="<%= person.name %>"></div>
+              <div>
+                <p class="person-name"><%= person.name %></p>
+                <a class="person-website" href="<%= person.website %>" target="_blank"><%= person.website %></a>
+              </div>
+            </div>
+            <p class="person-bio"><%= person.bio %></p>
+          </div>
+      <% }) %>
     </div>
   </section>
 
   <div class="bottom-row">
     <img src="/assets/decorative_buttons_left.png" alt="decorative buttons" class="decorative-button">
     <section class="bottom-screen">
-      <% persons.forEach(person => { %>
-        <div class="grid-item"><a href="./person/<%= person.id %>"><%= person.name %></a>, 
-          squad_id <%= person.squad_id %>
-          <img src="<%= person.avatar %>" alt="avatar">
-        </div>
-      <% }) %>
+      <ul class="people">
+        <% persons.forEach(person => { %>
+          <li><p id="person.<%= person.id %>" class="person"><%= person.name %></p></li>
+        <% }) %>
+      </ul>
     </section>
     <img src="/assets/decorative_buttons_right.png" alt="decorative buttons" class="decorative-button">
   <div>
