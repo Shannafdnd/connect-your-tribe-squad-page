@@ -6,6 +6,22 @@
     <div class="text-box">
       <h1>Choose your starter squad</h1>
     </div>
+
+    <h2>Berichten</h2>
+  <ul>
+    <% messages.forEach(message => { %> 
+      <li><%= message %></li>
+    <% }); %>
+  </ul>
+
+  <form action="/" method="post"></form>
+  <label>
+    Berichtje:
+    <textarea required name="bericht"></textarea>
+  </label>
+  <button type="submit">Verstuur bericht</button>
+
+  
   </section>
 
   <div class="bottom-row">
